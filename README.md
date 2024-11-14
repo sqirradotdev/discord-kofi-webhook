@@ -13,13 +13,13 @@ This is a Cloudflare Workers app for the sole purpose of transforming Ko-fi dona
 ## Quick Start Guide
 
 1. Clone this repository.
-2. Duplicate `.dev.vars.example` with the name `.dev.vars`.
+2. Duplicate `.dev.vars.example` with the name `.dev.vars`. We will be using this for bookkeeping secrets later.
 3. Make sure to make a webhook in a channel in your server. Here is a [handy guide](https://support.discord.com/hc/en-us/articles/228383668-Intro-to-Webhooks) from Discord itself. Copy the URL, open `.dev.vars`, paste to `DISCORD_WEBHOOK_URL`.
 4. Go to [this Ko-fi page](https://ko-fi.com/manage/webhooks) (you might need to log in), under Webhooks, click the Advanced button, copy the verification token, go back to `.dev.vars`, paste to `KOFI_VERIFICATION_TOKEN`.
-5. *(Optional)* Feel free to modify the rest of the variables in that file.
-6. Run `npm i` for packages installation.
-7. Run `npm run deploy` (you might get prompted for login). Wait for a few seconds or minutes until a URL popped in your terminal. Copy that URL, go back to [this Ko-fi page](https://ko-fi.com/manage/webhooks), paste the URL into the Webhook URL field, and click Update.
-8. Test if it works by scrolling down and clicking the various tests. If it works, you're done!
+5. Run `npm i` for packages installation.
+6. Run `npm run deploy` (you might get prompted for login). Wait for a few seconds or minutes until a URL popped in your terminal. Copy that URL, go back to [this Ko-fi page](https://ko-fi.com/manage/webhooks), paste the URL into the Webhook URL field, and click Update.
+7. Deploy everything in `.dev.vars` by running `npx wrangler secret <KEY>` (where `<KEY>` is the variable name). When prompted, paste the value of said variable.
+8. Go back to [this Ko-fi page](https://ko-fi.com/manage/webhooks) and test if it works by scrolling down and clicking the various tests. If it works, you're done!
 
 ## Troubleshooting
 
